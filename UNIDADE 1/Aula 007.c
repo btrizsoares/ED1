@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void ler_cenario(int n, int *cenario) {
+    for (int i = 0; i < n; i++) {
+        scanf("%d", (cenario + i));
+    }
+}
+
+int main () {
+    int n;
+    printf("Digite o número de blocos no cenário: \n");
+    scanf("%d", &n);
+
+    int cenario[n];
+
+    ler_cenario(n, cenario);
+
+    for (int i = 0; i < n; i++) {
+        if (cenario[i] == 1) {
+            cenario[i] = 2;
+            break;
+        }
+    }
+
+    printf("Cenário modificado: \n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", cenario[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
